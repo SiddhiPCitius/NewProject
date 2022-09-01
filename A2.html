@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DOCUMENT</title>
+</head>
+
+<body>
+    <script>
+
+
+        let arr = [];
+        let count = 0;
+
+        //Taking Input from user
+        do {
+            let temp = prompt(`Element = ${count} \n Enter number for array. Press cancel to exit.`);
+            if (temp === '' || temp === null) {
+                break;
+            } else {
+                arr.push(temp);
+            }
+            count++;
+        } while (1);
+
+        
+        console.log(`User enter array values are :- ${arr}`);
+        
+        //Calling odd  function
+        console.log(`Odd Number's :- ${odd(arr)}`)
+
+        //Odd function
+        function odd(arr) {
+            let odd = [];
+            arr.forEach(i => {
+                if (i % 2 !== 0) {
+                    odd.push(i);
+                }
+            });
+            return odd;
+        }
+    </script>
+</body>
+
+</html>l

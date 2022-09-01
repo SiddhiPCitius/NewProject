@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DOCUMENT</title>
+</head>
+
+<body>
+    <script>
+        let arr = [];
+        let count = 0;
+
+        //Taking input from user
+        do {
+            let temp = prompt(`Element = ${count} \n Enter number for array. Press cancel to exit.`)
+            if (temp === '' || temp === null) {
+                break;
+            } else {
+                arr.push(temp);
+            }
+            count++;
+        } while (1);
+
+        console.log(`User enter array values are :- ${arr}`);
+
+        //Taking input from user
+        let n = prompt(`1.Odd \n 2.Even \n 3.Prime \n 4.Composite \nPress cancel to exit`)
+        select(+n);
+
+        //Function call
+        function select(n) {
+            switch (n) {
+                case 1:
+                    console.log(`Odd Number for given array is :- ${print(arr, odd)}`);
+                    break;
+                case 2:
+                    console.log(`Even Number for given array is :- ${print(arr, even)}`);
+                    break;
+                case 3:
+                    console.log(`Prime Number for given array is :- ${print(arr, prime)}`);
+                    break;
+                case 4:
+                    console.log(`Composite Number for given array is :- ${print(arr, composite)}`);
+                    break;
+                default:
+                    console.log("Error 404...!")
+                    break;
+            }
+        }
+
+        //Print function
+        function print(arr, check) {
+            let newArr = [];
+            for (val of arr) {
+                if (check(val)) {
+                    newArr.push(val);
+                }
+            }
+            return newArr;
+        }
+
+        //Odd Function
+        function odd(n) {
+            return n % 2 !== 0;
+        }
+
+        //Even Function
+        function even(n) {
+            return n % 2 === 0;
+        }
+
+        //Prime Function
+        function prime(n) {
+            let flag = true;
+            for (let i = 2; i <= n / 2; i++) {
+                if (n % i === 0) {
+                    flag = false;
+                }
+            }
+            return flag;
+        }
+
+        //Composite Function
+        function composite(n) {
+            let flag = true;
+            for (let i = 2; i <= n / 2; i++) {
+                if (n % i === 0) {
+                    flag = false;
+                }
+            }
+            return !flag;
+        }
+    </script>
+</body>
+
+</html>
