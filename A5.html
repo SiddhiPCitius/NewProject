@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOCUMENT</title>
+</head>
+<body>
+    <script>
+
+        //Get Video Function
+        async function getVideo(){
+            let promise = new Promise((res , rej) => {
+                setTimeout(() => {
+                    res("Got Video");
+                },3000)
+            })
+
+            let response = await promise;
+            console.log(response);
+            addIntro();
+        }
+
+        //Add Intro Function
+        async function addIntro(){
+            let promise = new Promise((res , rej) => {
+                setTimeout(() => {
+                    res("Intro Added")
+                },3000)
+            })
+
+            var response = await promise;
+            console.log(response);
+            addSummary();
+        }
+
+        //Add Summary Function
+        async function addSummary(){
+            let promise = new Promise((res , rej) => {
+                setTimeout(() => {
+                    res("Summary Added")
+                },3000)
+            })
+
+            var response = await promise;
+            console.log(response);
+        }
+
+        //Call Function
+        getVideo();
+    </script>
+</body>
+</html>
